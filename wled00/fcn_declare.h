@@ -6,12 +6,7 @@
  */
 
 //alexa.cpp
-#ifndef WLED_DISABLE_ALEXA
-void onAlexaChange(EspalexaDevice* dev);
-void alexaInit();
-void handleAlexa();
-void onAlexaChange(EspalexaDevice* dev);
-#endif
+// Alexa/Espalexa support removed
 
 //button.cpp
 void shortPressAction(uint8_t b=0);

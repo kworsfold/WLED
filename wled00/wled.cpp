@@ -81,9 +81,7 @@ void WLED::loop()
   #ifndef WLED_DISABLE_INFRARED
   handleIR();
   #endif
-  #ifndef WLED_DISABLE_ALEXA
-  handleAlexa();
-  #endif
+  // Alexa/Espalexa support removed
 
   if (doCloseFile) {
     closeFile();
@@ -747,11 +745,7 @@ void WLED::initInterfaces()
   }
 #endif
 
-#ifndef WLED_DISABLE_ALEXA
-  // init Alexa hue emulation
-  if (alexaEnabled)
-    alexaInit();
-#endif
+  // Alexa/Espalexa support removed
 
 #ifndef WLED_DISABLE_OTA
   if (aOtaEnabled)

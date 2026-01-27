@@ -24,7 +24,7 @@
 //#define WLED_DISABLE_OTA         // saves 14kb
 
 // You can choose some of these features to disable:
-//#define WLED_DISABLE_ALEXA       // saves 11kb
+// Alexa/Espalexa support removed
 //#define WLED_DISABLE_HUESYNC     // saves 4kb
 //#define WLED_DISABLE_INFRARED    // saves 12kb, there is no pin left for this on ESP8266-01
 #ifndef WLED_DISABLE_MQTT
@@ -123,14 +123,7 @@
 #include "src/dependencies/timezone/Timezone.h"
 #include "src/dependencies/toki/Toki.h"
 
-#ifndef WLED_DISABLE_ALEXA
-  #define ESPALEXA_ASYNC
-  #define ESPALEXA_NO_SUBPAGE
-  #define ESPALEXA_MAXDEVICES 10
-  // #define ESPALEXA_DEBUG
-  #include "src/dependencies/espalexa/Espalexa.h"
-  #include "src/dependencies/espalexa/EspalexaDevice.h"
-#endif
+// Alexa/Espalexa support removed
 
 #ifdef WLED_ENABLE_DMX
  #ifdef ESP8266
@@ -635,10 +628,7 @@ WLED_GLOBAL byte interfaceUpdateCallMode _INIT(CALL_MODE_INIT);
 
 // alexa udp
 WLED_GLOBAL String escapedMac;
-#ifndef WLED_DISABLE_ALEXA
-  WLED_GLOBAL Espalexa espalexa;
-  WLED_GLOBAL EspalexaDevice* espalexaDevice;
-#endif
+// Alexa/Espalexa support removed
 
 // dns server
 WLED_GLOBAL DNSServer dnsServer;

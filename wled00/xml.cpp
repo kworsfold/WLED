@@ -518,9 +518,7 @@ void getSettingsJS(byte subPage, char* dest)
     sappends('s',SET_F("AI"),alexaInvocationName);
     sappend('c',SET_F("SA"),notifyAlexa);
     sappend('v',SET_F("AP"),alexaNumPresets);
-    #ifdef WLED_DISABLE_ALEXA
-    oappend(SET_F("toggle('Alexa');"));  // hide Alexa settings
-    #endif
+    // Alexa/Espalexa support removed
 
     #ifdef WLED_ENABLE_MQTT
     sappend('c',SET_F("MQ"),mqttEnabled);

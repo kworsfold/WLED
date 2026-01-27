@@ -1,0 +1,2 @@
+wled00/alexa.cpp
+wled00/src/dependencies/espalexa/

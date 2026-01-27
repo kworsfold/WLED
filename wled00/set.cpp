@@ -719,9 +719,7 @@ void handleSettingsSet(AsyncWebServerRequest *request, byte subPage)
   // do not save if factory reset or LED settings (which are saved after LED re-init)
   doSerializeConfig = subPage != SUBPAGE_LEDS && !(subPage == SUBPAGE_SEC && doReboot);
   if (subPage == SUBPAGE_UM) doReboot = request->hasArg(F("RBT")); // prevent race condition on dual core system (set reboot here, after doSerializeConfig has been set)
-  #ifndef WLED_DISABLE_ALEXA
-  if (subPage == SUBPAGE_SYNC) alexaInit();
-  #endif
+  // Alexa/Espalexa support removed
 }
 
 

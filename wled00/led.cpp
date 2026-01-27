@@ -166,12 +166,7 @@ void updateInterfaces(uint8_t callMode)
 
   if (callMode == CALL_MODE_WS_SEND) return;
 
-  #ifndef WLED_DISABLE_ALEXA
-  if (espalexaDevice != nullptr && callMode != CALL_MODE_ALEXA) {
-    espalexaDevice->setValue(bri);
-    espalexaDevice->setColor(col[0], col[1], col[2]);
-  }
-  #endif
+  // Alexa/Espalexa support removed
   doPublishMqtt = true;
 }
 

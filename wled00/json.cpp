@@ -766,9 +766,7 @@ void serializeInfo(JsonObject root)
     if (!netDebugEnabled) os &= ~0x0080;
     #endif
   #endif
-  #ifndef WLED_DISABLE_ALEXA
-  os += 0x40;
-  #endif
+  // Alexa/Espalexa support removed
 
   //os += 0x20; // indicated now removed Blynk support, may be reused to indicate another build-time option
 

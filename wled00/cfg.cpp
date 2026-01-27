@@ -892,16 +892,7 @@ void serializeConfig() {
   if_live[F("no-gc")] = arlsDisableGammaCorrection;
   if_live[F("offset")] = arlsOffset;
 
-#ifndef WLED_DISABLE_ALEXA
-  JsonObject if_va = interfaces.createNestedObject("va");
-  if_va[F("alexa")] = alexaEnabled;
-
-  JsonArray if_va_macros = if_va.createNestedArray("macros");
-  if_va_macros.add(macroAlexaOn);
-  if_va_macros.add(macroAlexaOff);
-
-  if_va["p"] = alexaNumPresets;
-#endif
+  // Alexa/Espalexa support removed
 
 #ifdef WLED_ENABLE_MQTT
   JsonObject if_mqtt = interfaces.createNestedObject("mqtt");
